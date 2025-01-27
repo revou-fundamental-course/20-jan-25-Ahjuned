@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kalkulator BMI</title>
+<style>
+/* CSS untuk tampilan kalkulator */
+body {
+font-family: Arial, sans-serif;
+background-color: #f2f2f2;
+}
+.container {
+width: default;
+background: white;
+margin: 30px auto;
+padding: 30px 20px;
+}
+label {
+display: block;
+margin-bottom: 10px;
+}
+input[type="number"] {
+box-sizing : border-box;
+width: 100%;
+padding: 10px;
+font-size: 11pt;
+margin-bottom: 20px;
+}
+button {
+width: 100%;
+padding: 10px;
+background-color: #4caf50;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+}
+.result {
+margin-top: 20px;
+text-align: center;
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>Kalkulator BMI</h1>
+<form id="bmiForm">
+<label for="weight">Berat Badan (kg):</label>
+<input type="number" id="weight" required>
+<label for="height">Tinggi Badan (cm):</label>
+<input type="number" id="height" required>
+<button type="submit">Hitung BMI</button>
+</form>
+<div class="result" id="result"></div>
+</div><script>
+// JavaScript untuk menghitung BMI
+document.getElementById('bmiForm').addEventListener('submit', function(e) {
+e.preventDefault();
+var weight = parseFloat(document.getElementById('weight').value);
+var height = parseFloat(document.getElementById('height').value) / 100;
+var bmi = weight / (height * height);
+var result = document.getElementById('result');
+if (isNaN(bmi)) {
+result.textContent = 'Mohon masukkan berat badan dan tinggi badan yang valid.';
+} else {
+result.textContent = 'BMI Anda: ' + bmi.toFixed(2);
+}
+});
+</script>
+</body>
+</html>
