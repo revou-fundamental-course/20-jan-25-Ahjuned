@@ -8,30 +8,54 @@
 </head>
 <body>
     <div class="container">
-        <h1>Kalkulator BMI</h1>
-        <p>Gunakan formulir di bawah ini untuk menghitung Body Mass Index (BMI) Anda. BMI membantu menentukan apakah berat badan Anda sehat berdasarkan tinggi dan berat badan Anda.</p>
+        <div class="row">
+            <!-- Form on the right -->
+            <div class="form-container">
+                <h1>Kalkulator BMI</h1>
+                <p>Gunakan formulir di bawah ini untuk menghitung Body Mass Index (BMI) Anda. BMI membantu menentukan apakah berat badan Anda sehat berdasarkan tinggi dan berat badan Anda.</p>
 
-        <form id="bmiForm">
-            <label for="gender">Jenis Kelamin:</label>
-            <select id="gender" required>
-                <option value="">Pilih...</option>
-                <option value="male">Laki-Laki</option>
-                <option value="female">Wanita</option>
-            </select>
+                <form id="bmiForm">
+                    <label for="gender">Jenis Kelamin:</label>
+                    <div id="gender" class="gender-options">
+                        <label>
+                            <input type="radio" name="gender" value="male" required>Laki-Laki
+                        </label>
+                        <label>
+                            <input type="radio" name="gender" value="female" required>Wanita
+                        </label>
+                    </div>
 
-            <label for="height">Tinggi Badan (cm):</label>
-            <input type="number" id="height" min="0" required placeholder="Masukkan tinggi badan">
+                    <label for="age">Usia (tahun):</label>
+                    <input type="number" id="age" min="0" required placeholder="Masukkan usia">
 
-            <label for="weight">Berat Badan (kg):</label>
-            <input type="number" id="weight" min="0" required placeholder="Masukkan berat badan">
+                    <label for="height">Tinggi Badan (cm):</label>
+                    <input type="number" id="height" min="0" required placeholder="Masukkan tinggi badan">
 
-            <button type="button" id="calculateBtn">Hitung BMI</button>
-        </form>
+                    <label for="weight">Berat Badan (kg):</label>
+                    <input type="number" id="weight" min="0" required placeholder="Masukkan berat badan">
 
-        <div id="result" class="hidden">
-            <h2>Hasil BMI</h2>
-            <p id="bmiValue"></p>
-            <p id="bmiCategory"></p>
+                    <button type="button" id="calculateBtn">Hitung BMI</button>
+                </form>
+            </div>
+
+            <!-- Result on the left -->
+            <div id="result" class="result-container hidden">
+                <h2>Hasil BMI</h2>
+                <p id="bmiValue"></p>
+                <p id="bmiCategory"></p>
+                <p id="bmiDescription"></p>
+                <p id="healthRisk"></p>
+
+                <h3>Kategori BMI Menurut WHO</h3>
+                <ul id="bmiCategories">
+                    <li><strong>Kurang dari 18.5:</strong> Kekurangan berat badan</li>
+                    <li><strong>18.5 - 24.9:</strong> Berat badan normal</li>
+                    <li><strong>25 - 29.9:</strong> Kelebihan berat badan</li>
+                    <li><strong>30 ke atas:</strong> Obesitas</li>
+                </ul>
+
+                <button id="downloadBtn" class="hidden">Download Hasil</button>
+            </div>
         </div>
     </div>
 

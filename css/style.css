@@ -8,8 +8,10 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    max-width: 1000px;
     margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
     padding: 20px;
     background: #fff;
     border-radius: 8px;
@@ -56,9 +58,42 @@ button:hover {
 }
 
 #result {
-    margin-top: 20px;
+    margin-left: 20px;
+    max-width: 400px;
     padding: 15px;
     background: #e9f7df;
     border: 1px solid #c3e6cb;
     border-radius: 5px;
+}
+
+#bmiCategories {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#bmiCategories li {
+    margin-bottom: 10px;
+}
+
+.gender-options {
+    display: flex;
+    justify-content: flex-start;  /* Agar elemen di sebelah kiri */
+    margin-bottom: 15px;
+}
+
+.gender-options label {
+    display: inline-block;
+    margin-right: 10px;  /* Memberikan jarak sedikit antara label */
+}
+
+.gender-options input {
+    margin-right: 5px;  /* Memberikan jarak antara tombol radio dan teks */
+}
+
+#downloadBtn {
+    background-color: #28a745;
+}
+
+#downloadBtn:hover {
+    background-color: #218838;
 }
